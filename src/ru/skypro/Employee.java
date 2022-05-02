@@ -8,13 +8,15 @@ public class Employee {
     private double salary;
     private int id = 1;
 
+    public static int COUNT = 0;
+
     public Employee(String firstName, String secondName, String thirdName, int depart, double salary) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.thirdName = thirdName;
         this.depart = depart;
         this.salary = salary;
-        id++;
+        this.id = ++COUNT;
 
     }
     public String getFirstName() {

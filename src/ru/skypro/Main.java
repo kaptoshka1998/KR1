@@ -31,18 +31,18 @@ public class Main {
         System.out.println("Средняя зарплата в компании: " + summ);
         System.out.println();
 
-        double max = 0;
+        double max = member[0].getSalary();
         for (int i = 0; i < member.length; i++) {
-            if (max < member[i].getSalary()) {
+            if (max > member[i].getSalary()) {
                 max = member[i].getSalary();
             }
         }
         System.out.println("Максимальная зарплата в компании: " + max);
         System.out.println();
 
-        double min = 1000000;
+        double min = member[0].getSalary();
         for (int i = 0; i < member.length; i++) {
-            if (min > member[i].getSalary()) {
+            if (min < member[i].getSalary()) {
                 min = member[i].getSalary();
             }
         }
