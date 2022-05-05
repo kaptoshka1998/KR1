@@ -19,24 +19,35 @@ public class Employee {
         this.id = ++COUNT;
 
     }
+
     public String getFirstName() {
         return this.firstName;
     }
+
     public String getSecondName() {
         return this.secondName;
     }
+
     public String getThirdName() {
         return this.thirdName;
     }
+
     public int getDepart() {
         return this.depart;
     }
+
     public double getSalary() {
         return salary;
     }
+
+    public int getId() {
+        return this.id;
+    }
+
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
     public String toString() {
         return "ФИО  " + this.firstName + " " + this.secondName + " " + this.thirdName + ",  отдел " + this.depart + ",  зартплата " + this.salary;
     }

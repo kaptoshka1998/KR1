@@ -22,7 +22,7 @@ public class Main {
 
         double summ = 0;
         for (int i = 0; i < member.length; i++) {
-         summ = summ + member[i].getSalary();
+            summ = summ + member[i].getSalary();
         }
         System.out.println("Общие затраты на зарплату: " + summ);
         System.out.println();
@@ -51,6 +51,40 @@ public class Main {
 
         for (int i = 0; i < member.length; i++) {
             System.out.println(member[i].getFirstName() + " " + member[i].getSecondName() + " " + member[i].getThirdName());
+        }
+
+        //повышенная сложность
+
+        System.out.println();
+        System.out.println("Повышенная сложность");
+        System.out.println();
+
+        for (int i = 1; i <= 5; i++) {
+            double maxi = 0;
+            double mini = 1000000;
+            double summa = 0;
+            double percent = 20;
+            for (int j = 0; j < member.length; j++) {
+                if (member[j].getDepart() == i) {
+                    if (member[j].getSalary() > maxi) {
+                        maxi = member[j].getSalary();
+                    }
+                    if (member[j].getSalary() < mini) {
+                        mini = member[j].getSalary();
+                    }
+                    summa = summa + member[j].getSalary();
+                    member[j].setSalary(member[j].getSalary() + member[j].getSalary() / 100 * percent);
+                    System.out.println("Сотрудник " + i + " отдела: " + member[j].getFirstName() + " " + member[j].getSecondName() + " " + member[j].getThirdName() + ", " + member[j].getSalary());
+                    System.out.println("Проиндексированная зарплата в " + i + " отделе = " + member[j].getSalary());
+                    //в зависимости от того, нужно нам увидеть уже проиндексированную зп сотрудника или нет, предыдущие 2 строки можно менять местами
+                }
+
+            }
+            System.out.println("Максимальная зарплата в " + i + " отделе = " + maxi);
+            System.out.println("Минимальная зарплата в " + i + " отделе = " + mini);
+            System.out.println("Затраты на зарплату в " + i + " отделе = " + summa);
+            System.out.println();
+
         }
 
 
