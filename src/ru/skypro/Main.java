@@ -60,6 +60,7 @@ public class Main {
         System.out.println();
 
         for (int i = 1; i <= 5; i++) {
+            System.out.println("Отдел " + i);
             double maxi = 0;
             double mini = 1000000;
             double summa = 0;
@@ -73,18 +74,27 @@ public class Main {
                         mini = member[j].getSalary();
                     }
                     summa = summa + member[j].getSalary();
+                    System.out.println("Сотрудник отдела: " + member[j].getFirstName() + " " + member[j].getSecondName() + " " + member[j].getThirdName() + ", " + member[j].getSalary());
                     member[j].setSalary(member[j].getSalary() + member[j].getSalary() / 100 * percent);
-                    System.out.println("Сотрудник " + i + " отдела: " + member[j].getFirstName() + " " + member[j].getSecondName() + " " + member[j].getThirdName() + ", " + member[j].getSalary());
-                    System.out.println("Проиндексированная зарплата в " + i + " отделе = " + member[j].getSalary());
-                    //в зависимости от того, нужно нам увидеть уже проиндексированную зп сотрудника или нет, предыдущие 2 строки можно менять местами
+                    System.out.println("Проиндексированная зарплата в отделе = " + member[j].getSalary());
+                    //Чтобы увидеть сразу проиндексироанную зп, можно sout по сотрудникам перенести под операцию индексации зп
                 }
 
             }
-            System.out.println("Максимальная зарплата в " + i + " отделе = " + maxi);
-            System.out.println("Минимальная зарплата в " + i + " отделе = " + mini);
-            System.out.println("Затраты на зарплату в " + i + " отделе = " + summa);
+            System.out.println("Максимальная зарплата в отделе = " + maxi);
+            System.out.println("Минимальная зарплата в отделе = " + mini);
+            System.out.println("Затраты на зарплату в отделе = " + summa);
             System.out.println();
 
+        }
+        double normal = 260000;
+        for (int i = 0; i < member.length; i++) {
+            if (member[i].getSalary() < normal) {
+                System.out.println("Зарплата < нормы у сотрудника с ID " + member[i].getId() + ": " + member[i].getFirstName() + " " + member[i].getSecondName() + " " + member[i].getThirdName() + ", " + member[i].getSalary());
+            } else {
+                System.out.println("Зарплата >= норме у сотрудника с ID " +member[i].getId() + " " + member[i].getFirstName() + " " + member[i].getSecondName() + " " + member[i].getThirdName() + ", " + member[i].getSalary());
+            }
+            //я тут сделала, что ID по порядку проверяются, но могу и так, чтобы сначала больше, потом меньше, просто else поменять на еще один if
         }
 
 
